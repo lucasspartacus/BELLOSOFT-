@@ -1,0 +1,140 @@
+<!--
+Lucas Spartacus Vieira Carvalho 
+BELLOSOFT PROGRAMAS DE COMPUTADOR EIRELI
+Front end
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Login e Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+<!-- Container principal para os formulários de login e registro -->
+    <div class="container">
+        <div class="form-container">
+            
+<!-- Formulário de Login -->
+            <form id="loginForm">
+           
+                
+                <!-- Botão de retorno para o formulário de registro -->
+                <img src="https://i.postimg.cc/L83TK0Vr/btn-return.png"  height="28px" width="28px" onclick="showRegister()" class="returnbtn">
+                
+                <!-- Títulos e subtítulos do formulário de login -->
+                <p id="titulo">Login</p>
+                <p id="subTest">Welcome back!</p>
+                <p id="subTest">Please login to continue</p>
+                <input type="text" disabled> 
+
+                <!-- Campo de email-->
+                <div class="divSeparation">
+                    <img id="icons" src="https://i.postimg.cc/XNx4qVYJ/Mail.png" height="24px" width="24px" alt="">
+                    <label for="loginEmail">Email address</label>
+                    <input type="email" id="loginEmail" required placeholder="Your email address">
+                </div>
+
+                <!-- Campo de senha e botão de visualização -->
+                <div class="divSeparation">
+                    <img id="icons" src="https://i.postimg.cc/kggVG1Cr/Lock.png" height="24px" width="24px" alt="">
+                    <label for="loginPassword">Password</label>
+                    <input placeholder="Enter your password" type="password" id="loginPassword" required>
+                    <img id="imgEye" src="https://i.postimg.cc/L6BC2X9C/Shape-2.png" height="12px" width="20px" onclick="showPassword()">
+                </div>
+          
+                <!-- Botão de login -->
+                <button type="submit">Login</button>
+
+                <center>
+                    <div>
+                        <!-- Link para recuperação de senha -->
+                        <label class="labelLink">Forgot Password</label>
+                        <div class="seconDiv">
+                            <div class="gesiterLabel">
+                                <p id="subTest">Or Continue with Social Accounts</p>
+                            </div>
+
+                            <!-- Ttendo em vista que não foi solicitado um back só redirecion para a pagina das redes-->
+                            <div class="parent">
+                                <div class="child"><img src="https://i.postimg.cc/nhGscygG/Group.png" height="24px" width="24px" onclick="window.location='https://www.google.com/'"></div>
+                                <div class="child"><img src="https://i.postimg.cc/1X7nPwdh/f-logo-RGB-Blue-144-1.png" height="24px" width="24px" onclick="window.location='https://www.facebook.com'"></div>
+                                <div class="child"><img src="https://i.postimg.cc/XN10fsSc/apple-black-1.png" height="24px" width="24px" onclick="window.location='https://www.apple.com/'"></div>
+                                <div class="child"><img src="https://i.postimg.cc/6q86rSMg/Group-1.png" height="24px" width="24px" onclick="window.location='https://x.com'"></div>     
+                            </div>
+                        </div>
+
+                        
+
+                        <!-- Link para alternar para o formulário de registro -->
+                        <span id="subTest">Don't have an account? <span id="loginBtn" class="labelLink" onclick="showRegister()">Create Now</span></span>
+                    </div>
+                </center>
+            </form>
+            
+<!-- Formulário de Registro -->                   
+            <form id="registerForm" style="display:none;">
+                <!-- Botão de retorno para o formulário de login -->
+                <img src="https://i.postimg.cc/L83TK0Vr/btn-return.png" onclick="showLogin()" class="returnbtn">
+                
+                <!-- Títulos e subtítulos do formulário de registro -->
+                <p>Create Account</p>
+                <p id="subTest">Enter your information below or continue <br> with social media account!</p>
+                <div class="inputForm">
+                    
+                    <!-- Campo de email-->
+                    <div class="divSeparation">
+                        <img id="icons" src="https://i.postimg.cc/XNx4qVYJ/Mail.png" height="24px" width="24px" alt="">
+                        <label for="registerEmail">Email address</label>
+                        <input type="email" id="registerEmail" required placeholder="Your email address">
+                    </div>
+
+                    <!-- Campo de número de celular com ícone -->
+                    <div class="divSeparation">
+                        <img id="icons" src="https://i.postimg.cc/5tpnvkYw/Shape.png" height="24px" width="16px" alt="">
+                        <label for="registerPhone">Mobile Number</label>
+                    <!-- Campo telefone só aceita padrãobrasileir ex:3199999-9999 -->
+                        <input type="tel" id="registerPhone" required pattern="[0-9]{2}[0-9]{5}-[0-9]{4}" required placeholder="Your mobile number">
+                    </div>
+
+                    <!-- Campo de senha e botão de visualização -->
+                    <div class="divSeparation">
+                        <img id="icons" src="https://i.postimg.cc/kggVG1Cr/Lock.png" height="24px" width="24px" alt="">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" placeholder="Enter your password">
+                        <img id="imgEye" src="https://i.postimg.cc/L6BC2X9C/Shape-2.png" height="12px" width="20px" onclick="showPassword()">
+                    </div>
+
+                    <!-- Botão de criar conta -->
+                    <button type="submit">Create Account</button>
+                </div>
+                
+                <center>
+                    <div>
+                        <div class="gesiterLabel">
+                            <p id="subTest">Or Continue with Social Accounts</p>
+                        </div>
+                        
+                        <!-- Ttendo em vista que não foi solicitado um back só redirecion para a pagina das redes-->
+                        <div class="parent">
+                            <div class="child"><img src="/img/Group.png" height="24px" width="24px" onclick="window.location='https://www.google.com/'"></div>
+                            <div class="child"><img src="/img/f_logo_RGB-Blue_144 1.png" height="24px" width="24px" onclick="window.location='https://www.facebook.com'"></div>
+                            <div class="child"><img src="/img/apple-black 1.png" height="24px" width="24px" onclick="window.location='https://www.apple.com/'"></div>
+                            <div class="child"><img src="/img/Group(1).png" height="24px" width="24px" onclick="window.location='https://x.com'"></div>     
+                        </div>
+                        
+                        <!-- Link para alternar para o formulário de login -->
+                        <div id="test">
+                            <span id="subTest">Don't have an account? <span id="loginBtn" class="labelLink" onclick="showLogin()">Login Now</span></span>
+                        </div>
+                    </div>
+                </center>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
